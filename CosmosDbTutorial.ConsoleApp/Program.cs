@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace CosmosDbTutorial.Console
+namespace CosmosDbTutorial.ConsoleApp
 {
-    class Program
+	public class Program
     {
-        static void Main(string[] args)
+	    private static void Main()
         {
             Console.WriteLine("Hello World!");
         }
