@@ -12,16 +12,15 @@ namespace CosmosDbTutorial.DataAccess.Repository
 	public class DocumentDbRepository : IRepository
 	{
 		private readonly DocumentClient _client;
-		private readonly Database _db;
 
 		public DocumentDbRepository()
 		{
 			_client = new DocumentClient(new Uri(DocumentDbEndpointUrl), DocumentDbPrimaryKey);
-			_db = _client.CreateDatabaseIfNotExistsAsync(new Database { Id = DatabaseName }).Result;
+			_client.CreateDatabaseIfNotExistsAsync(new Database { Id = DatabaseName }).Wait();
 		}
 		public void Dispose()
 		{
-			throw new NotImplementedException();
+			_client.Dispose();
 		}
 		public async Task<bool> AnyAsync<T>(string id) where T : BaseEntity
 		{
@@ -34,7 +33,7 @@ namespace CosmosDbTutorial.DataAccess.Repository
 		{
 			return _client.CreateDocumentQuery<T>
 				(UriFactory.CreateDocumentCollectionUri(DatabaseName, typeof(T).Name))
-				.First(x => x.id == id);
+				.Where(x => x.id == id).ToList().First();
 		}
 
 		public async Task<IList<T>> GetAllAsync<T>() where T : BaseEntity

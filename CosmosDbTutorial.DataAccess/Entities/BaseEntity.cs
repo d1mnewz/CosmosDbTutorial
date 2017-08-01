@@ -1,11 +1,12 @@
-﻿namespace CosmosDbTutorial.DataAccess.Entities
+﻿using System;
+using MongoDB.Bson;
+
+namespace CosmosDbTutorial.DataAccess.Entities
 {
-	/// <summary>
-	/// id field is automaticly generated on server-side.
-	/// </summary>
 	public abstract class BaseEntity
 	{
 		// ReSharper disable once InconsistentNaming
-		public string id { get; set; }
+		public readonly string id = ObjectId.GenerateNewId(DateTime.Now).ToString();
+
 	}
 }
