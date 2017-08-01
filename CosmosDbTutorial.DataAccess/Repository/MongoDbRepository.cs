@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Security.Authentication;
 using System.Threading.Tasks;
-using CosmosDbTutorial.DataAccess.Entities;
 using MongoDB.Driver;
 using static CosmosDbTutorial.Configuration.Config;
 
@@ -21,7 +20,6 @@ namespace CosmosDbTutorial.DataAccess.Repository
 				new SslSettings { EnabledSslProtocols = SslProtocols.Tls12 };
 			_client =  new MongoClient(settings);
 			_db = _client.GetDatabase(DatabaseName);
-
 		}
 
 		public async Task<bool> AnyAsync<T>(string id) where T : BaseEntity

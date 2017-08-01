@@ -1,4 +1,6 @@
-﻿namespace CosmosDbTutorial.DataAccess.Entities
+﻿using CosmosDbTutorial.DataAccess;
+
+namespace CosmosDbTutorial.Entities
 {
 	public class Skill : BaseEntity
 	{

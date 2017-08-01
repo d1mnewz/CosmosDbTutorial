@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
+    <Description>Very generic repositories for Data Access Layer, implemented MongoDbRepository and DocumentDbRepository</Description>
+    <Authors>Dmytro Zhluktenko</Authors>
+    <Company>Euristiq</Company>
+    <Product>Generic Repositories</Product>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

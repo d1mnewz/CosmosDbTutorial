@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using CosmosDbTutorial.DataAccess;
 
-namespace CosmosDbTutorial.DataAccess.Entities
+namespace CosmosDbTutorial.Entities
 {
 	public class Person : BaseEntity
 	{

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CosmosDbTutorial.DataAccess.Entities;
 using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 using static CosmosDbTutorial.Configuration.Config;

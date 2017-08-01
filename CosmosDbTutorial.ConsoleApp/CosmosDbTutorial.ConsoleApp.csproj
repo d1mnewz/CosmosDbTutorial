@@ -11,6 +11,7 @@
     <PackageReference Include="Microsoft.CodeAnalysis.Compilers" Version="3.0.0-dev-61717-03" />
     <PackageReference Include="Microsoft.Net.Compilers" Version="3.0.0-dev-61717-03" />
     <ProjectReference Include="..\CosmosDbTutorial.DataAccess\CosmosDbTutorial.DataAccess.csproj" />
+    <ProjectReference Include="..\CosmosDbTutorial.Entities\CosmosDbTutorial.Entities.csproj" />
   </ItemGroup>
 
 </Project>

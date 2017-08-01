@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Dmytro Zhluktenko</Authors>
+    <Company>Euristiq</Company>
+    <Description>Strongly typed configuration for AppSettings for .NET Core app
+https://github.com/d1mnewz/CosmosDbTutorial</Description>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>

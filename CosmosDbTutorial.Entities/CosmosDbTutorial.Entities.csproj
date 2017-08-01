@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Dmytro Zhluktenko</Authors>
+    <Company>Euristiq</Company>
+    <Product>Entities for project</Product>
+    <Description>Sample data models for testing.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CosmosDbTutorial.DataAccess\CosmosDbTutorial.DataAccess.csproj" />
+  </ItemGroup>
+
+</Project>

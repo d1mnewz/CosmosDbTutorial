@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
-using CosmosDbTutorial.DataAccess.Entities;
 using CosmosDbTutorial.DataAccess.Repository;
-using MongoDB.Bson;
+using CosmosDbTutorial.Entities;
 
 namespace CosmosDbTutorial.ConsoleApp
 {
