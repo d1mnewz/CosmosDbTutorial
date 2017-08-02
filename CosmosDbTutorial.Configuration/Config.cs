@@ -15,7 +15,7 @@ namespace CosmosDbTutorial.Configuration
 		{
 			var builder = new ConfigurationBuilder()
 				.SetBasePath(Directory.GetCurrentDirectory())
-				.AddJsonFile("appsettings.json");
+				.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 
 			Configuration = builder.Build();
 		}

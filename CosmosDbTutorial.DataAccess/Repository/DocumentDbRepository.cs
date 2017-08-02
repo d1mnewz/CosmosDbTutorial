@@ -35,18 +35,17 @@ namespace CosmosDbTutorial.DataAccess.Repository
 				.Where(x => x.id == id).ToList().First();
 		}
 
-		public async Task<IList<T>> GetAllAsync<T>() where T : BaseEntity
+		public async Task<IEnumerable<T>> GetAllAsync<T>() where T : BaseEntity
 		{
 			return _client.CreateDocumentQuery<T>
-				(UriFactory.CreateDocumentCollectionUri(DatabaseName, typeof(T).Name))
-				.ToList();
+					(UriFactory.CreateDocumentCollectionUri(DatabaseName, typeof(T).Name));
 		}
 
-		public async Task<List<T>> GetAsync<T>(IList<string> ids) where T : BaseEntity
+		public async Task<IEnumerable<T>> GetAsync<T>(IEnumerable<string> ids) where T : BaseEntity
 		{
 			return _client.CreateDocumentQuery<T>
 				(UriFactory.CreateDocumentCollectionUri(DatabaseName, typeof(T).Name))
-				.Where(x => ids.Contains(x.id)).ToList();
+				.Where(x => ids.Contains(x.id));
 		}
 
 		/// <summary>
@@ -81,7 +80,7 @@ namespace CosmosDbTutorial.DataAccess.Repository
 
 		public async Task DeleteAsync<T>(string id) where T : BaseEntity
 		{
-			await _client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(DatabaseName, typeof(T).Name, id.ToString()));
+			await _client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(DatabaseName, typeof(T).Name, id));
 
 		}
 	}

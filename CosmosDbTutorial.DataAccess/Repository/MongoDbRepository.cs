@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Security.Authentication;
 using System.Threading.Tasks;
 using MongoDB.Driver;
@@ -32,14 +33,14 @@ namespace CosmosDbTutorial.DataAccess.Repository
 			return await _db.GetCollection<T>(typeof(T).Name).Find(x => x.id == id).FirstAsync();
 		}
 
-		public async Task<IList<T>> GetAllAsync<T>() where T : BaseEntity
+		public async Task<IEnumerable<T>> GetAllAsync<T>() where T : BaseEntity
 		{
-			return await _db.GetCollection<T>(typeof(T).Name).Find(_ => true).ToListAsync();
+			return  _db.GetCollection<T>(typeof(T).Name).Find(_ => true).ToEnumerable();
 		}
 
-		public async Task<List<T>> GetAsync<T>(IList<string> ids) where T : BaseEntity
+		public async Task<IEnumerable<T>> GetAsync<T>(IEnumerable<string> ids) where T : BaseEntity
 		{
-			return await _db.GetCollection<T>(typeof(T).Name).Find(x => ids.Contains(x.id)).ToListAsync();
+			return _db.GetCollection<T>(typeof(T).Name).Find(x => ids.Contains(x.id)).ToEnumerable();
 		}
 
 		public async Task InsertAsync<T>(T entity) where T : BaseEntity
